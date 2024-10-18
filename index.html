@@ -13,7 +13,6 @@
             background: linear-gradient(72deg, pink, rgb(239, 117, 135));
             overflow: hidden;
             min-height: 100vh;
-            overflow: auto;
         }
 
         h1 {
@@ -82,17 +81,6 @@
         .prev:hover, .next:hover {
             background-color: rgba(0, 0, 0, 0.8);
         }
-
-        .confetti {
-            position: absolute;
-            width: 15px;
-            height: 15px;
-            background-color: red;
-            opacity: 0.8;
-            animation: fall 3s linear infinite;
-            border-radius: 50%;
-        }
-
         @keyframes fall {
             0% {
                 transform: translateY(-100vh) rotate(0deg);
@@ -142,29 +130,6 @@
     </fieldset>
 
     <script>
-        function createConfetti() {
-            const confettiElement = document.createElement('div');
-            confettiElement.classList.add('confetti');
-            document.body.appendChild(confettiElement);
-
-            // Set random position and colors for each confetti
-            confettiElement.style.left = Math.random() * 100 + 'vw';
-            confettiElement.style.backgroundColor = getRandomColor();
-
-            // Remove confetti after animation ends
-            setTimeout(() => {
-                confettiElement.remove();
-            }, 3000);
-        }
-
-        function getRandomColor() {
-            const colors = ['#ffcc00', '#ff6666', '#66b3ff', '#66ff66', '#ff99cc'];
-            return colors[Math.floor(Math.random() * colors.length)];
-        }
-
-        // Generate multiple confetti at once
-        setInterval(createConfetti, 100);
-
         const images = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "a.jpg", "b.jpg", "c.jpg"];
         let currentImageIndex = 0;
 
